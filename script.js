@@ -61,3 +61,8 @@ student.addCourse('Canadian History');
 console.log(student.name,'added',student.courses[student.courses.length-1],'course.');
 console.log('Updated courses for',student.name,':', student.courses);
 console.log('Total number of courses:', student.getTotalCourses());
+
+// Bonus task ------------------------------------
+
+const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+console.log(`Average Score: ${averageScore.toFixed(2)}`);
