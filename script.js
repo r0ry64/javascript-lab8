@@ -35,3 +35,14 @@ const scores = [85, 69, 78, 99];
 const [score1, score2] = scores;
 
 console.log(`First Score: ${score1}, Second Score: ${score2}`);
+
+// Part 4 ------------------------------------
+
+const clonedStudent = { ...student, graduationYear: 2024 };
+console.log(clonedStudent);
+// methods cant be logged when theyre cloned and referenced, unless its called directly:
+console.log('displayInfo:', clonedStudent.displayInfo());
+
+const newCourses = ['Art', 'Music', 'Drama'];
+const allCourses = [...student.courses, ...newCourses];
+console.log('All Courses:', allCourses);
