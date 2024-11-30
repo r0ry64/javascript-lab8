@@ -28,8 +28,8 @@ console.log('Objects are identical:', JSON.stringify(student) === JSON.stringify
 
 const { name, courses } = student;
 
-console.log(`Destructured Name: ${name}`);
-console.log(`Destructured Courses: ${courses.join(', ')}`);
+console.log(`Destructured name: ${name}`);
+console.log(`Destructured courses: ${courses.join(', ')}`);
 
 const scores = [85, 69, 78, 99];
 const [score1, score2] = scores;
@@ -45,4 +45,19 @@ console.log('displayInfo:', clonedStudent.displayInfo());
 
 const newCourses = ['Art', 'Music', 'Drama'];
 const allCourses = [...student.courses, ...newCourses];
-console.log('All Courses:', allCourses);
+console.log('All courses:', allCourses);
+
+// Part 5 ------------------------------------
+
+student.addCourse = function (newCourse) {
+    this.courses.push(newCourse);
+};
+
+student.getTotalCourses = function () {
+    return this.courses.length;
+};
+
+student.addCourse('Canadian History');
+console.log(student.name,'added',student.courses[student.courses.length-1],'course.');
+console.log('Updated courses for',student.name,':', student.courses);
+console.log('Total number of courses:', student.getTotalCourses());
